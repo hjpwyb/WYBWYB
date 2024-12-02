@@ -2,7 +2,8 @@ name: Fetch Table Data
 
 on:
   schedule:
-
+    # 每 3 小时运行一次
+    - cron: "0 */8 * * *"
   workflow_dispatch:  # 支持手动触发工作流
 
 jobs:
