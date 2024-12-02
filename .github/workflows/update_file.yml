@@ -33,6 +33,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add scripts/ccc/kxwl.*
+        git add scripts/ccc/kxwl.*  # 添加更新的文件
         git diff --quiet && git diff --staged --quiet || git commit -m "Update kxwl files with recent content"
-        git push || echo "No changes to push"
+        # 使用 GITHUB_TOKEN 进行身份验证
+        git push https://xinyex:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git || echo "No changes to push"
