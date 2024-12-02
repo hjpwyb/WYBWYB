@@ -1,0 +1,37 @@
+name: Update Port List
+
+on:
+  workflow_run:
+    workflows: ["Update IP List"]
+    types:
+      - completed
+  workflow_dispatch:  # 添加手动触发选项
+
+jobs:
+  update_ports:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run generate_port_txt.py to filter accessible IPs
+        run: python scripts/bbb/generate_port_txt.py
+
+      - name: Commit and push the updated port.txt
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add scripts/bbb/port.txt
+          git commit -m "Update accessible IPs in port.txt"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
