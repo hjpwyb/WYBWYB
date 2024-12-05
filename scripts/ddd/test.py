@@ -26,10 +26,10 @@ try:
 
     # 节点模板
     template = (
-        "vless://12818e84-e754-4eb7-9a22-d6630d071f13@{ip}:443"
-        "?encryption=none&security=tls&sni=notls022.ckeke210.filegear-sg.me"
-        "&fp=random&type=ws&host=notls022.ckeke210.filegear-sg.me"
-        "&path=%2F%3Fed%3D2560#hao"
+        "vless://2ee6b814-0e18-438c-8f87-b8408411a654@{ip}:443"
+        "?encryption=none&security=tls&sni=edge.bangs.us.kg"
+        "&alpn=http%2F1.1&fp=random&type=ws&host=edge.bangs.us.kg"
+        "&path=%2F%3Fed%3D2560#hao2"
     )
     
     # 生成新的节点信息
