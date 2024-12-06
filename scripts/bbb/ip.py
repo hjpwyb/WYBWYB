@@ -1,45 +1,41 @@
 import requests
 from bs4 import BeautifulSoup
 
-# 网页 URL 列表
+def extract_ip_data(url):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()  # 如果请求失败，抛出异常
+    
+    # 解析网页
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # 提取 IP 数据
+    ip_data = []
+    table = soup.find('table')
+    rows = table.find_all('tr')
+    for row in rows[1:]:
+        columns = row.find_all('td')
+        if len(columns) == 5:  # 确保该行有 5 列
+            ip = columns[1].text.strip()  # 获取第二列（IP列）
+            ip_data.append(ip)
+    
+    return ip_data
+
+# 使用这个函数抓取 IP 数据
 urls = [
     "https://ipdb.030101.xyz/bestcf/",
     "https://stock.hostmonit.com/CloudFlareYes"
 ]
 
-# 函数：解析并提取数据
-def extract_ip_data(url):
-    # 获取网页内容
-    response = requests.get(url)
-    response.raise_for_status()  # 如果请求失败，抛出异常
-
-    # 解析网页
-    soup = BeautifulSoup(response.text, 'html.parser')
-
-    # 找到表格
-    table = soup.find('table')
-
-    # 找到所有表格行
-    rows = table.find_all('tr')
-
-    ip_data = []
-
-    # 遍历表格行并提取 IP 数据
-    for row in rows[1:]:  # 跳过表头
-        columns = row.find_all('td')
-        if len(columns) >= 2:  # 确保该行至少有2列，防止索引错误
-            ip = columns[1].text.strip()  # 获取第二列（通常是IP列，但根据网页结构需要调整）
+for url in urls:
+    print(f"Extracting IP data from {url}...")
+    ip_data = extract_ip_data(url)
+    # 将数据保存到文件
+    with open('scripts/bbb/port_data.txt', 'a', encoding='utf-8') as file:
+        for ip in ip_data:
             ip_with_port = f"{ip}:443#优选443"
-            ip_data.append(ip_with_port)
+            file.write(f"{ip_with_port}\n")
 
-    return ip_data
-
-# 打开文件并写入数据
-with open('scripts/bbb/port_data.txt', mode='w', encoding='utf-8') as file:
-    for url in urls:
-        print(f"Extracting IP data from {url}...")
-        ip_data = extract_ip_data(url)
-        for ip_with_port in ip_data:
-            file.write(f"{ip_with_port}\n")  # 将拼接后的 IP 写入文件，每个 IP 占一行
-
-print("IP data with ':443#优选443' fetched and saved to scripts/bbb/port_data.txt")
+print("IP data extracted and saved successfully.")
