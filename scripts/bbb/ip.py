@@ -35,7 +35,7 @@ try:
     ip_data = fetch_csv_data(csv_url)
     if ip_data:
         # 保存数据到文件
-        with open('scripts/bbb/port_data.txt', 'a', encoding='utf-8') as file:
+        with open('scripts/bbb/port_data22.txt', 'a', encoding='utf-8') as file:
             for ip in ip_data:
                 ip_with_port = f"{ip}:443#优选443"
                 file.write(f"{ip_with_port}\n")
