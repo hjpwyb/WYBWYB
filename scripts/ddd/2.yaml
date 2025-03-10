@@ -1,0 +1,452 @@
+#
+#-------------------------------------------------------------#
+#  创建者：https://v2rayse.com
+#  创建时间：2025-03-10 17:16:39
+#  模版：ACL4SSR_Online_Full_MultiMode
+#  节点数量：30
+#-------------------------------------------------------------#
+#
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+proxies:
+  - {"type":"vmess","name":"科技网络🇺🇸_1","ws-opts":{"path":"/XESALISTHEBEST?ed=2048","headers":{"host":"amd.al"}},"server":"151.101.66.168","port":"80","uuid":"7dc78582-88a8-4b4c-9e3e-50831d672766","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vless","name":"科技网络🇺🇸_2","server":"15.204.158.90","port":443,"uuid":"0a44145f-59dc-4e5b-a233-677b97f5114c","skip-cert-verify":true,"network":"tcp","servername":"147135011033.sec21org.com","tls":true,"udp":true}
+  - {"type":"vless","name":"科技网络_1","server":"zula.ir","port":80,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.xn--i-sx6a60i.us.kg.","ws-opts":{"path":"/?ed=MTMVPN-MTMVPN-MTMVPN-MTMVPN/?ed=2560","headers":{"host":"a.xn--i-sx6a60i.us.kg."}}}
+  - {"type":"vless","name":"科技网络🇺🇸_3","server":"151.101.2.216","port":80,"uuid":"402684ce-7106-4147-8728-5b3d91bbc0cc","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"www.bmaustriabm.com","ws-opts":{"path":"/?ed=2048","headers":{"host":"www.bmaustriabm.com"}}}
+  - {"type":"vless","name":"科技网络_2","server":"zula.ir","port":80,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.xn--i-sx6a60i.us.kg.","ws-opts":{"path":"ShadowProxy66/?ed=2560","headers":{"host":"a.xn--i-sx6a60i.us.kg."}}}
+  - {"type":"vmess","name":"科技网络🇨🇳_1","server":"120.198.71.214","port":"35565","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"科技网络🇨🇳_2","server":"120.198.71.214","port":"35565","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"ss","name":"科技网络🇨🇳_3","server":"hk01.x.quickcht3.club","port":52611,"cipher":"chacha20-ietf-poly1305","password":"2be0c954-4291-45ea-b47d-ca713180550b"}
+  - {"type":"vless","name":"科技网络🇪🇸_1","server":"94.250.246.200","port":8080,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.mifeng.us.kg","ws-opts":{"path":"/?ed","headers":{"host":"a.mifeng.us.kg"}}}
+  - {"type":"vless","name":"科技网络_3","server":"zula.ir","port":80,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.xn--i-sx6a60i.us.kg.","ws-opts":{"path":"telegram@mtmvpn/?ed=2560","headers":{"host":"a.xn--i-sx6a60i.us.kg."}}}
+  - {"type":"vless","name":"科技网络🇺🇸_4","server":"151.101.192.155","port":80,"uuid":"c6b34209-523e-4350-a1fd-058a5847d124","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"iranhoush.com","ws-opts":{"path":"ws/?ed=2560","headers":{"host":"iranhoush.com"}}}
+  - {"type":"vmess","name":"科技网络🇨🇳_4","server":"183.236.51.38","port":"59104","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"ss","name":"科技网络🇨🇳_5","server":"8tv68qhq.slashdevslashnetslashtun.net","port":16009,"cipher":"aes-256-gcm","password":"WNW5MZJX57ZJUNQU"}
+  - {"type":"vless","name":"科技网络🇺🇸_5","server":"151.101.0.155","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Join--E-L-i-V-2-R-A-Y.net","ws-opts":{"path":"/Join-ELiV2RAY?ed=2560","headers":{"host":"Join--E-L-i-V-2-R-A-Y.net"}}}
+  - {"type":"vless","name":"科技网络🇺🇸_6","server":"join.e-l-i-v-2-r-a-y.fastly80-3.hosting-ip.com","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Join--E-L-i-V-2-R-A-Y.net","ws-opts":{"path":"/channel,ELiV2RAY-channel,ELiV2RAY-channel,ELiV2RAY?ed=2560","headers":{"host":"Join--E-L-i-V-2-R-A-Y.net"}}}
+  - {"type":"vless","name":"科技网络🇺🇸_7","server":"151.101.2.165","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Join--E-L-i-V-2-R-A-Y.net","ws-opts":{"path":"/channel,ELiV2RAY-channel,ELiV2RAY-channel,ELiV2RAY","headers":{"host":"Join--E-L-i-V-2-R-A-Y.net"}}}
+  - {"type":"vless","name":"科技网络🇺🇸_8","server":"151.101.0.155","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Join--E-L-i-V-2-R-A-Y.net","ws-opts":{"path":"/channel,ELiV2RAY-channel,ELiV2RAY-channel,ELiV2RAY","headers":{"host":"Join--E-L-i-V-2-R-A-Y.net"}}}
+  - {"type":"vless","name":"科技网络🇺🇸_9","server":"join.e-l-i-v-2-r-a-y.fastly80-3.hosting-ip.com","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Join--E-L-i-V-2-R-A-Y.net","ws-opts":{"path":"/","headers":{"host":"Join--E-L-i-V-2-R-A-Y.net"}}}
+  - {"type":"vless","name":"科技网络🇺🇸_10","server":"join.e-l-i-v-2-r-a-y.fastly80-3.hosting-ip.com","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Join--E-L-i-V-2-R-A-Y.net","ws-opts":{"path":"/channel,ELiV2RAY-channel,ELiV2RAY-channel,ELiV2RAY?ed","headers":{"host":"Join--E-L-i-V-2-R-A-Y.net"}}}
+  - {"type":"vless","name":"科技网络🇺🇸_11","server":"join.e-l-i-v-2-r-a-y.fastly80-3.hosting-ip.com","port":80,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Join--E-L-i-V-2-R-A-Y.net","ws-opts":{"path":"/channel,ELiV2RAY-channel,ELiV2RAY-channel,ELiV2RAY?edfp","headers":{"host":"Join--E-L-i-V-2-R-A-Y.net"}}}
+  - {"type":"vless","name":"科技网络🇺🇸_12","server":"147.135.10.103","port":443,"uuid":"3b9bc773-05eb-4d5f-8c1f-57342c0c4f40","skip-cert-verify":true,"network":"tcp","servername":"147135010103.sec19org.com","tls":true,"udp":true}
+  - {"type":"vless","name":"科技网络_4","server":"www.speedtest.net","port":2052,"uuid":"dfc1a9ab-6241-4b73-92f7-b299fc6b7751","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"Yak-Khanda-kUn-eY-gUL.biNG.com.xn--cR8HaaaAaAAAaAaaAaAaAAaAAaaaAAAAAaAaaAaaaAaaaaAAaaAAAaaaaAa.xN--Cr8hAaAaaAaaAAAAAAaaaAAAaAAaaAaAaAAAAAA.TREPAspeEdTEsT.NEtrag.cOm.PX.Com.sh017.IR.XN--Cr8hAaaAaaAaaAaaaAAAaaaAaaAaaaAaAAAaaaA.yek.dDnS-ip.nEt","ws-opts":{"path":"/?ed=1080","headers":{"host":"Yak-Khanda-kUn-eY-gUL.biNG.com.xn--cR8HaaaAaAAAaAaaAaAaAAaAAaaaAAAAAaAaaAaaaAaaaaAAaaAAAaaaaAa.xN--Cr8hAaAaaAaaAAAAAAaaaAAAaAAaaAaAaAAAAAA.TREPAspeEdTEsT.NEtrag.cOm.PX.Com.sh017.IR.XN--Cr8hAaaAaaAaaAaaaAAAaaaAaaAaaaAaAAAaaaA.yek.dDnS-ip.nEt"}}}
+  - {"type":"vmess","name":"科技网络🇨🇳_6","server":"183.236.51.38","port":"53902","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"64","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"科技网络🇨🇳_7","server":"120.198.71.219","port":"42055","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"科技网络🇨🇳_8","server":"120.232.153.41","port":"32077","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vless","name":"科技网络🇺🇸_13","server":"151.101.194.165","port":80,"uuid":"0ee358fe-8d55-445b-89d7-4ed76d58a515","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"JoinBede-ELiV2-RAY.ir","ws-opts":{"path":"/Telegram-ID-@ELiV2RAY--Telegram-ID-@ELiV2RAY--Telegram-ID-@ELiV2RAY","headers":{"host":"JoinBede-ELiV2-RAY.ir"}}}
+  - {"type":"ss","name":"科技网络🇨🇳_9","server":"qh62onjn.slashdevslashnetslashtun.net","port":15009,"cipher":"aes-256-gcm","password":"FCEUOASRQJC0LN0K"}
+  - {"type":"vmess","name":"科技网络🇨🇳_10","server":"183.236.51.38","port":"42120","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","cipher":"auto","network":"tcp"}
+  - {"type":"vmess","name":"科技网络🇯🇵","ws-opts":{"path":"/XESALISTHEBEST?ed=2048","headers":{"host":"amd.al"}},"server":"www.aetv.com","port":"80","uuid":"7dc78582-88a8-4b4c-9e3e-50831d672766","alterId":"0","cipher":"auto","network":"ws"}
+  - {"type":"vless","name":"科技网络🇪🇸_2","server":"94.250.246.200","port":8080,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","skip-cert-verify":true,"udp":true,"tls":true,"network":"ws","servername":"a.mifeng.us.kg","ws-opts":{"path":"/?ed=2560","headers":{"host":"a.mifeng.us.kg"}}}
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔯 故障转移
+      - 🔮 负载均衡
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🚀 手动切换
+    type: select
+    proxies:
+      - 科技网络🇺🇸_1
+      - 科技网络🇺🇸_2
+      - 科技网络_1
+      - 科技网络🇺🇸_3
+      - 科技网络_2
+      - 科技网络🇨🇳_1
+      - 科技网络🇨🇳_2
+      - 科技网络🇨🇳_3
+      - 科技网络🇪🇸_1
+      - 科技网络_3
+      - 科技网络🇺🇸_4
+      - 科技网络🇨🇳_4
+      - 科技网络🇨🇳_5
+      - 科技网络🇺🇸_5
+      - 科技网络🇺🇸_6
+      - 科技网络🇺🇸_7
+      - 科技网络🇺🇸_8
+      - 科技网络🇺🇸_9
+      - 科技网络🇺🇸_10
+      - 科技网络🇺🇸_11
+      - 科技网络🇺🇸_12
+      - 科技网络_4
+      - 科技网络🇨🇳_6
+      - 科技网络🇨🇳_7
+      - 科技网络🇨🇳_8
+      - 科技网络🇺🇸_13
+      - 科技网络🇨🇳_9
+      - 科技网络🇨🇳_10
+      - 科技网络🇯🇵
+      - 科技网络🇪🇸_2
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 科技网络🇺🇸_1
+      - 科技网络🇺🇸_2
+      - 科技网络_1
+      - 科技网络🇺🇸_3
+      - 科技网络_2
+      - 科技网络🇨🇳_1
+      - 科技网络🇨🇳_2
+      - 科技网络🇨🇳_3
+      - 科技网络🇪🇸_1
+      - 科技网络_3
+      - 科技网络🇺🇸_4
+      - 科技网络🇨🇳_4
+      - 科技网络🇨🇳_5
+      - 科技网络🇺🇸_5
+      - 科技网络🇺🇸_6
+      - 科技网络🇺🇸_7
+      - 科技网络🇺🇸_8
+      - 科技网络🇺🇸_9
+      - 科技网络🇺🇸_10
+      - 科技网络🇺🇸_11
+      - 科技网络🇺🇸_12
+      - 科技网络_4
+      - 科技网络🇨🇳_6
+      - 科技网络🇨🇳_7
+      - 科技网络🇨🇳_8
+      - 科技网络🇺🇸_13
+      - 科技网络🇨🇳_9
+      - 科技网络🇨🇳_10
+      - 科技网络🇯🇵
+      - 科技网络🇪🇸_2
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 科技网络🇺🇸_1
+      - 科技网络🇺🇸_2
+      - 科技网络_1
+      - 科技网络🇺🇸_3
+      - 科技网络_2
+      - 科技网络🇨🇳_1
+      - 科技网络🇨🇳_2
+      - 科技网络🇨🇳_3
+      - 科技网络🇪🇸_1
+      - 科技网络_3
+      - 科技网络🇺🇸_4
+      - 科技网络🇨🇳_4
+      - 科技网络🇨🇳_5
+      - 科技网络🇺🇸_5
+      - 科技网络🇺🇸_6
+      - 科技网络🇺🇸_7
+      - 科技网络🇺🇸_8
+      - 科技网络🇺🇸_9
+      - 科技网络🇺🇸_10
+      - 科技网络🇺🇸_11
+      - 科技网络🇺🇸_12
+      - 科技网络_4
+      - 科技网络🇨🇳_6
+      - 科技网络🇨🇳_7
+      - 科技网络🇨🇳_8
+      - 科技网络🇺🇸_13
+      - 科技网络🇨🇳_9
+      - 科技网络🇨🇳_10
+      - 科技网络🇯🇵
+      - 科技网络🇪🇸_2
+  - name: 🔮 负载均衡
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 科技网络🇺🇸_1
+      - 科技网络🇺🇸_2
+      - 科技网络_1
+      - 科技网络🇺🇸_3
+      - 科技网络_2
+      - 科技网络🇨🇳_1
+      - 科技网络🇨🇳_2
+      - 科技网络🇨🇳_3
+      - 科技网络🇪🇸_1
+      - 科技网络_3
+      - 科技网络🇺🇸_4
+      - 科技网络🇨🇳_4
+      - 科技网络🇨🇳_5
+      - 科技网络🇺🇸_5
+      - 科技网络🇺🇸_6
+      - 科技网络🇺🇸_7
+      - 科技网络🇺🇸_8
+      - 科技网络🇺🇸_9
+      - 科技网络🇺🇸_10
+      - 科技网络🇺🇸_11
+      - 科技网络🇺🇸_12
+      - 科技网络_4
+      - 科技网络🇨🇳_6
+      - 科技网络🇨🇳_7
+      - 科技网络🇨🇳_8
+      - 科技网络🇺🇸_13
+      - 科技网络🇨🇳_9
+      - 科技网络🇨🇳_10
+      - 科技网络🇯🇵
+      - 科技网络🇪🇸_2
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 💬 OpenAi
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      - 🎥 奈飞节点
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - 🇨🇳 台湾节点
+      - 🚀 节点选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🇨🇳 台湾节点
+      - 🇭🇰 香港节点
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🚀 手动切换
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软Bing
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🎶 网易音乐
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - 科技网络🇯🇵
+  - name: 🇺🇲 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DIRECT
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - DIRECT
+  - name: 🎥 奈飞节点
+    type: select
+    proxies:
+      - DIRECT
+rules:
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
