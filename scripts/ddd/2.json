@@ -1,0 +1,72 @@
+{
+    "urls": [
+        {
+            "name": "18.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/18.json"
+        },
+        {
+            "name": "19.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/19.json"
+        },
+        {
+            "name": "app.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/app.json"
+        },
+        {
+            "name": "hk.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/hk.json"
+        },
+        {
+            "name": "js.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/js.json"
+        },
+        {
+            "name": "juyou.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/juyou.json"
+        },
+        {
+            "name": "py.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/py.json"
+        },
+        {
+            "name": "sp.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/sp.json"
+        },
+        {
+            "name": "tvbox.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/tvbox.json"
+        },
+        {
+            "name": "tvbox2.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/tvbox2.json"
+        },
+        {
+            "name": "vip.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/vip.json"
+        },
+        {
+            "name": "xb.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xb.json"
+        },
+        {
+            "name": "xbpq.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xbpq.json"
+        },
+        {
+            "name": "xp.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xp.json"
+        },
+        {
+            "name": "xyq.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xyq.json"
+        },
+        {
+            "name": "xyqh.json",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xyqh.json"
+        },
+        {
+            "name": "其他接口.txt",
+            "url": "https://yubou.us.kg/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/其他接口.txt"
+        }
+    ]
+}
