@@ -26,9 +26,9 @@ try:
 
     # 节点模板
     template = (
-        "vless://71bcecc8-d291-4280-ad88-7f7dbd00522a@{ip}:443"
-        "?encryption=none&security=tls&sni=5282.clzuo.us.kg"
-        "&fp=random&type=ws&host=5282.clzuo.us.kg"
+        "vless://80cd8aa5-6263-4afd-907c-fb8979e2d511@{ip}:443"
+        "?encryption=none&security=tls&sni=5858.bubo023.dynv6.net"
+        "&fp=random&type=ws&host=5858.bubo023.dynv6.net"
         "&path=%2F%3Fed%3D2560#hao"
     )
     
