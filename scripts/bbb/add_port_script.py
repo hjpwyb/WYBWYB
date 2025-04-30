@@ -2,9 +2,9 @@ import requests
 
 # 源文件的 GitHub 原始地址列表
 source_urls = [
-    "https://kenyu.ggff.net/https://raw.githubusercontent.com/ymyuuu/IPDB/main/bestproxy.txt",
-    "https://kenyu.ggff.net/https://raw.githubusercontent.com/ymyuuu/IPDB/main/bestcf.txt",
-    "https://kenyu.ggff.net/https://raw.githubusercontent.com/ymyuuu/IPDB/main/proxy.txt"
+    "https://raw.githubusercontent.com/ymyuuu/IPDB/main/bestproxy.txt",
+    "https://raw.githubusercontent.com/ymyuuu/IPDB/main/bestcf.txt",
+    "https://raw.githubusercontent.com/ymyuuu/IPDB/main/proxy.txt"
 ]
 
 # 目标文件路径
