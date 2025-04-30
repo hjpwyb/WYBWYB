@@ -2,71 +2,71 @@
     "urls": [
         {
             "name": "18.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/18.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/18.json"
         },
         {
             "name": "19.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/19.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/19.json"
         },
         {
             "name": "app.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/app.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/app.json"
         },
         {
             "name": "hk.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/hk.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/hk.json"
         },
         {
             "name": "js.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/js.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/js.json"
         },
         {
             "name": "juyou.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/juyou.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/juyou.json"
         },
         {
             "name": "py.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/py.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/py.json"
         },
         {
             "name": "sp.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/sp.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/sp.json"
         },
         {
             "name": "tvbox.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/tvbox.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/tvbox.json"
         },
         {
             "name": "tvbox2.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/tvbox2.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/tvbox2.json"
         },
         {
             "name": "vip.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/vip.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/vip.json"
         },
         {
             "name": "xb.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xb.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xb.json"
         },
         {
             "name": "xbpq.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xbpq.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xbpq.json"
         },
         {
             "name": "xp.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xp.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xp.json"
         },
         {
             "name": "xyq.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xyq.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xyq.json"
         },
         {
             "name": "xyqh.json",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xyqh.json"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/xyqh.json"
         },
         {
             "name": "其他接口.txt",
-            "url": "https://kenyu.ggff.net/https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/其他接口.txt"
+            "url": "https://raw.githubusercontent.com/c120487/TVBox-zyjk/main/其他接口.txt"
         }
     ]
 }
