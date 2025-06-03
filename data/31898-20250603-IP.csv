@@ -1,0 +1,35 @@
+﻿IP地址,端口,TLS,数据中心,地区,城市,网络延迟,下载速度
+192.9.250.241,443,true,SJC,North America,San Jose,174 ms,9713 kB/s
+192.9.137.193,8443,true,SJC,North America,San Jose,171 ms,6577 kB/s
+129.151.198.3,2053,true,ARN,Europe,Stockholm,269 ms,4175 kB/s
+168.138.46.67,443,true,KIX,Asia Pacific,Osaka,191 ms,4079 kB/s
+89.168.83.143,8443,true,FRA,Europe,Frankfurt,265 ms,3935 kB/s
+129.151.198.3,8443,true,ARN,Europe,Stockholm,273 ms,3818 kB/s
+141.148.229.106,443,true,AMS,Europe,Amsterdam,254 ms,3327 kB/s
+152.70.59.90,8443,true,AMS,Europe,Amsterdam,262 ms,3232 kB/s
+141.145.205.115,8443,true,CDG,Europe,Paris,259 ms,3071 kB/s
+158.178.206.197,2053,true,CDG,Europe,Paris,256 ms,3068 kB/s
+144.22.252.124,443,true,GRU,South America,São Paulo,346 ms,2585 kB/s
+84.235.169.234,443,true,AMS,Europe,Amsterdam,263 ms,2501 kB/s
+89.168.43.31,8443,true,CDG,Europe,Paris,261 ms,2335 kB/s
+158.101.199.249,8443,true,AMS,Europe,Amsterdam,297 ms,2259 kB/s
+150.230.20.156,8443,true,AMS,Europe,Amsterdam,296 ms,2175 kB/s
+168.138.141.235,2053,true,GRU,South America,São Paulo,342 ms,2123 kB/s
+146.235.59.153,2053,true,GRU,South America,São Paulo,352 ms,1907 kB/s
+132.226.163.224,8443,true,GRU,South America,São Paulo,368 ms,1686 kB/s
+217.142.243.226,443,true,KIX,Asia Pacific,Osaka,194 ms,1375 kB/s
+130.61.107.238,8443,true,FRA,Europe,Frankfurt,252 ms,1314 kB/s
+146.235.59.153,8443,true,GRU,South America,São Paulo,346 ms,1241 kB/s
+150.230.20.156,2053,true,AMS,Europe,Amsterdam,311 ms,1136 kB/s
+141.144.253.109,443,true,FRA,Europe,Frankfurt,254 ms,1094 kB/s
+89.168.68.57,8443,true,FRA,Europe,Frankfurt,272 ms,1027 kB/s
+141.147.85.167,8443,true,LHR,Europe,London,267 ms,988 kB/s
+158.180.49.11,2053,true,FRA,Europe,Frankfurt,261 ms,656 kB/s
+89.168.43.31,2053,true,CDG,Europe,Paris,266 ms,525 kB/s
+132.226.163.224,2053,true,GRU,South America,São Paulo,352 ms,422 kB/s
+158.180.49.11,8443,true,FRA,Europe,Frankfurt,261 ms,329 kB/s
+89.168.68.57,2053,true,FRA,Europe,Frankfurt,249 ms,272 kB/s
+158.178.206.197,8443,true,CDG,Europe,Paris,260 ms,99 kB/s
+168.138.50.249,443,true,KIX,Asia Pacific,Osaka,195 ms,0 kB/s
+138.3.222.33,443,true,NRT,Asia Pacific,Tokyo,153 ms,0 kB/s
+129.80.123.71,443,true,IAD,North America,Ashburn,237 ms,0 kB/s
