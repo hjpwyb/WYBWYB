@@ -1,4 +1,4 @@
-name: Run Node Check Script
+name: Run Node Check Script and Save Results
 
 on:
   push:
@@ -8,34 +8,46 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  workflow_dispatch:  # Allow manual trigger
+    - cron: '0 0 * * *'  # 每天 UTC 午夜运行
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 允许提交文件到仓库
 
     steps:
-      - name: Checkout repository
+      - name: 检出仓库
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: 设置 Python 环境
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run test.py
+      - name: 运行 test.py
         run: python scripts/ccc/test.py
 
-      - name: Upload logs
+      - name: 提交结果文件
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add scripts/ccc/results.log
+          git commit -m "Update results.log from node check script [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 上传日志作为工件
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: script-logs
-          path: '*.log'
+          path: scripts/ccc/results.log
           retention-days: 7
