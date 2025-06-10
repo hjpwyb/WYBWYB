@@ -46,8 +46,8 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add scripts/ccc/results.log
-          git commit -m "Update results.log from node check script [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]" || echo "No changes to commit"
+          git add scripts/ccc/results.log scripts/ccc/reachable_nodes.txt
+          git commit -m "Update results.log and reachable_nodes.txt from node check script [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -57,5 +57,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: script-logs
-          path: scripts/ccc/results.log
+          path: scripts/ccc/*.txt
           retention-days: 7
