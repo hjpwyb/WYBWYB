@@ -9,6 +9,7 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
 import time
+import socket
 
 # Set up logging to both console and file
 logging.basicConfig(
@@ -31,7 +32,7 @@ URLS = [
 def decode_vmess(vmess_url):
     try:
         encoded_str = vmess_url.replace('vmess://', '')
-        decoded_str = base64.b64decode(encoded_str).decode('utf-8')
+        decoded_str = base64.b64decode(encoded_str + '=' * (-len(encoded_str) % 4)).decode('utf-8')
         return json.loads(decoded_str)
     except Exception as e:
         logger.error(f"无法解码 VMess URL {vmess_url}: {e}")
@@ -51,9 +52,9 @@ def parse_node(node_url):
                 'port': port,
                 'id': parsed.username,
                 'encryption': query.get('encryption', ['none'])[0],
-                'security': query.get('security', [''])[0],
+                'security': query.get('security', ['none'])[0],
                 'sni': query.get('sni', [''])[0],
-                'type': query.get('type', [''])[0],
+                'type': query.get('type', ['tcp'])[0],
                 'host': query.get('host', [''])[0],
                 'path': query.get('path', [''])[0],
                 'full_config': node_url
@@ -69,7 +70,7 @@ def parse_node(node_url):
                     'id': vmess_data.get('id'),
                     'aid': int(vmess_data.get('aid', 0)),
                     'scy': vmess_data.get('scy', 'auto'),
-                    'net': vmess_data.get('net', ''),
+                    'net': vmess_data.get('net', 'tcp'),
                     'type': vmess_data.get('type', 'none'),
                     'host': vmess_data.get('host', ''),
                     'path': vmess_data.get('path', ''),
@@ -136,9 +137,10 @@ def generate_xray_config(node):
         }
         config['outbounds'][0]['streamSettings'] = {
             "network": node['type'],
-            "security": node['security'],
-            "tlsSettings": {"serverName": node['sni']} if node['security'] == 'tls' else {},
-            "wsSettings": {"path": node['path'], "headers": {"Host": node['host']}} if node['type'] == 'ws' else {}
+            "security": node['security'] if node['security'] in ['tls', 'xtls', 'reality'] else 'none',
+            "tlsSettings": {"serverName": node['sni'], "allowInsecure": False} if node['security'] == 'tls' else {},
+            "wsSettings": {"path": node['path'], "headers": {"Host": node['host']}} if node['type'] == 'ws' else {},
+            "tcpSettings": {} if node['type'] == 'tcp' else {}
         }
     elif node['protocol'] == 'vmess':
         config['outbounds'][0]['settings'] = {
@@ -154,9 +156,10 @@ def generate_xray_config(node):
         }
         config['outbounds'][0]['streamSettings'] = {
             "network": node['net'],
-            "security": node['tls'],
-            "tlsSettings": {"serverName": node['sni']} if node['tls'] == 'tls' else {},
-            "wsSettings": {"path": node['path'], "headers": {"Host": node['host']}} if node['net'] == 'ws' else {}
+            "security": node['tls'] if node['tls'] in ['tls', 'xtls'] else 'none',
+            "tlsSettings": {"serverName": node['sni'], "allowInsecure": False} if node['tls'] == 'tls' else {},
+            "wsSettings": {"path": node['path'], "headers": {"Host": node['host']}} if node['net'] == 'ws' else {},
+            "tcpSettings": {} if node['net'] == 'tcp' else {}
         }
 
     return config
@@ -170,7 +173,7 @@ def test_node_connectivity(node):
     
     try:
         # Create temporary Xray config file
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as temp_file:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as temp_file:
             json.dump(generate_xray_config(node), temp_file, indent=2)
             config_path = temp_file.name
 
@@ -183,12 +186,19 @@ def test_node_connectivity(node):
         )
 
         # Wait briefly to ensure Xray starts
-        time.sleep(1)
+        time.sleep(2)
+
+        # Check if Xray is running
+        if xray_process.poll() is not None:
+            stderr = xray_process.communicate()[1]
+            logger.error(f"Xray 启动失败 for {address} ({full_config[:30]}...): {stderr}")
+            os.unlink(config_path)
+            return full_config, False
 
         # Test connectivity through the proxy
-        test_url = 'http://www.google.com'
+        test_url = 'https://api.github.com'  # More reliable test endpoint
         proxies = {'http': 'socks5://127.0.0.1:1080', 'https': 'socks5://127.0.0.1:1080'}
-        response = requests.get(test_url, proxies=proxies, timeout=10)
+        response = requests.get(test_url, proxies=proxies, timeout=10, verify=False)
         success = response.status_code == 200
         status = '可连接' if success else '不可连接'
         logger.info(f"节点 {address} ({full_config[:30]}...): {status}")
@@ -202,8 +212,11 @@ def test_node_connectivity(node):
         os.unlink(config_path)
         
         return full_config, success
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         logger.error(f"测试 {address} ({full_config[:30]}...) 出错: {e}")
+        return full_config, False
+    except Exception as e:
+        logger.error(f"测试 {address} ({full_config[:30]}...) 未知错误: {e}")
         return full_config, False
 
 # Main function
@@ -244,7 +257,7 @@ def main():
     unique_nodes = list(set(node['full_config'] for node in parsed_nodes))
     parsed_unique = [node for node in parsed_nodes if node['full_config'] in unique_nodes]
     
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=3) as executor:
         results = list(executor.map(test_node_connectivity, parsed_unique))
 
     # Summarize results
