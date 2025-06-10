@@ -219,6 +219,18 @@ def test_node_connectivity(node):
         logger.error(f"测试 {address} ({full_config[:30]}...) 未知错误: {e}")
         return full_config, False
 
+# Function to save reachable nodes to a file
+def save_reachable_nodes(reachable_nodes):
+    output_file = 'scripts/ccc/reachable_nodes.txt'
+    try:
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
+        with open(output_file, 'w', encoding='utf-8') as f:
+            for node in reachable_nodes:
+                f.write(node + '\n')
+        logger.info(f"可连接节点已保存到 {output_file}")
+    except Exception as e:
+        logger.error(f"保存可连接节点到 {output_file} 出错: {e}")
+
 # Main function
 def main():
     # Download all nodes
@@ -272,6 +284,10 @@ def main():
     logger.info(f"不可连接节点数：{len(unreachable)}")
     if unreachable:
         logger.info("不可连接节点：" + ", ".join([config[:30] + '...' for config in unreachable]))
+
+    # Save reachable nodes to file
+    if reachable:
+        save_reachable_nodes(reachable)
 
 if __name__ == "__main__":
     main()
