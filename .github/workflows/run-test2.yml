@@ -31,6 +31,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
+      - name: 安装 Xray 核心
+        run: |
+          wget https://github.com/XTLS/Xray-core/releases/latest/download/xray-linux-64.zip
+          unzip xray-linux-64.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/xray
+          rm xray-linux-64.zip
+
       - name: 运行 test.py
         run: python scripts/ccc/test.py
 
