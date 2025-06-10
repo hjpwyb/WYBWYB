@@ -2,9 +2,12 @@ import requests
 import json
 import urllib.parse
 import logging
+import base64
+import subprocess
+import os
+import tempfile
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
-import base64
 import time
 
 # Set up logging to both console and file
@@ -27,7 +30,6 @@ URLS = [
 # Function to decode VMess URL
 def decode_vmess(vmess_url):
     try:
-        # Remove 'vmess://' prefix and decode base64
         encoded_str = vmess_url.replace('vmess://', '')
         decoded_str = base64.b64decode(encoded_str).decode('utf-8')
         return json.loads(decoded_str)
@@ -35,20 +37,47 @@ def decode_vmess(vmess_url):
         logger.error(f"无法解码 VMess URL {vmess_url}: {e}")
         return None
 
-# Function to parse VLESS or VMess URL and extract address
+# Function to parse VLESS or VMess URL and extract configuration
 def parse_node(node_url):
     try:
         if node_url.startswith('vless://'):
             parsed = urlparse(node_url)
             address = parsed.hostname
             port = parsed.port or 443
-            return {'address': address, 'port': port, 'full_config': node_url}
+            query = urllib.parse.parse_qs(parsed.query)
+            config = {
+                'protocol': 'vless',
+                'address': address,
+                'port': port,
+                'id': parsed.username,
+                'encryption': query.get('encryption', ['none'])[0],
+                'security': query.get('security', [''])[0],
+                'sni': query.get('sni', [''])[0],
+                'type': query.get('type', [''])[0],
+                'host': query.get('host', [''])[0],
+                'path': query.get('path', [''])[0],
+                'full_config': node_url
+            }
+            return config
         elif node_url.startswith('vmess://'):
             vmess_data = decode_vmess(node_url)
             if vmess_data:
-                address = vmess_data.get('add')
-                port = int(vmess_data.get('port', 0))
-                return {'address': address, 'port': port, 'full_config': node_url}
+                config = {
+                    'protocol': 'vmess',
+                    'address': vmess_data.get('add'),
+                    'port': int(vmess_data.get('port', 0)),
+                    'id': vmess_data.get('id'),
+                    'aid': int(vmess_data.get('aid', 0)),
+                    'scy': vmess_data.get('scy', 'auto'),
+                    'net': vmess_data.get('net', ''),
+                    'type': vmess_data.get('type', 'none'),
+                    'host': vmess_data.get('host', ''),
+                    'path': vmess_data.get('path', ''),
+                    'tls': vmess_data.get('tls', ''),
+                    'sni': vmess_data.get('sni', ''),
+                    'full_config': node_url
+                }
+                return config
         logger.warning(f"不支持的节点格式: {node_url}")
         return None
     except Exception as e:
@@ -67,26 +96,113 @@ def download_nodes(url):
         logger.error(f"无法从 {url} 下载节点: {e}")
         return []
 
-# Function to test proxy connectivity
-def test_node_connectivity(node_info):
-    if not node_info:
+# Function to generate Xray configuration file
+def generate_xray_config(node):
+    config = {
+        "log": {"loglevel": "warning"},
+        "inbounds": [
+            {
+                "port": 1080,
+                "protocol": "socks",
+                "settings": {"auth": "noauth", "udp": True}
+            }
+        ],
+        "outbounds": [
+            {
+                "protocol": node['protocol'],
+                "settings": {},
+                "streamSettings": {}
+            },
+            {"protocol": "freedom", "tag": "direct"}
+        ],
+        "routing": {
+            "rules": [
+                {"type": "field", "outboundTag": "direct", "domain": ["geosite:cn"]}
+            ]
+        }
+    }
+
+    if node['protocol'] == 'vless':
+        config['outbounds'][0]['settings'] = {
+            "vnext": [{
+                "address": node['address'],
+                "port": node['port'],
+                "users": [{
+                    "id": node['id'],
+                    "encryption": node['encryption'],
+                    "flow": "xtls-rprx-vision" if node['security'] == 'xtls' else ""
+                }]
+            }]
+        }
+        config['outbounds'][0]['streamSettings'] = {
+            "network": node['type'],
+            "security": node['security'],
+            "tlsSettings": {"serverName": node['sni']} if node['security'] == 'tls' else {},
+            "wsSettings": {"path": node['path'], "headers": {"Host": node['host']}} if node['type'] == 'ws' else {}
+        }
+    elif node['protocol'] == 'vmess':
+        config['outbounds'][0]['settings'] = {
+            "vnext": [{
+                "address": node['address'],
+                "port": node['port'],
+                "users": [{
+                    "id": node['id'],
+                    "alterId": node['aid'],
+                    "security": node['scy']
+                }]
+            }]
+        }
+        config['outbounds'][0]['streamSettings'] = {
+            "network": node['net'],
+            "security": node['tls'],
+            "tlsSettings": {"serverName": node['sni']} if node['tls'] == 'tls' else {},
+            "wsSettings": {"path": node['path'], "headers": {"Host": node['host']}} if node['net'] == 'ws' else {}
+        }
+
+    return config
+
+# Function to test proxy connectivity using Xray
+def test_node_connectivity(node):
+    if not node:
         return None, False
-    address = node_info['address']
-    full_config = node_info['full_config']
-    
-    # For simplicity, test connectivity by checking if the address is reachable
-    # Ideally, you'd use a proxy client library (e.g., v2ray) to test the full proxy
-    test_url = 'http://www.google.com'  # Test endpoint
-    proxies = None  # Placeholder: actual proxy client setup needed
+    address = node['address']
+    full_config = node['full_config']
     
     try:
-        # Simplified check; replace with actual proxy client for real testing
-        response = requests.get(f'http://{address}', timeout=5, allow_redirects=False)
-        success = response.status_code in range(200, 400)
+        # Create temporary Xray config file
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as temp_file:
+            json.dump(generate_xray_config(node), temp_file, indent=2)
+            config_path = temp_file.name
+
+        # Start Xray in the background
+        xray_process = subprocess.Popen(
+            ['xray', 'run', '-c', config_path],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+
+        # Wait briefly to ensure Xray starts
+        time.sleep(1)
+
+        # Test connectivity through the proxy
+        test_url = 'http://www.google.com'
+        proxies = {'http': 'socks5://127.0.0.1:1080', 'https': 'socks5://127.0.0.1:1080'}
+        response = requests.get(test_url, proxies=proxies, timeout=10)
+        success = response.status_code == 200
         status = '可连接' if success else '不可连接'
         logger.info(f"节点 {address} ({full_config[:30]}...): {status}")
+
+        # Clean up
+        xray_process.terminate()
+        try:
+            xray_process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            xray_process.kill()
+        os.unlink(config_path)
+        
         return full_config, success
-    except requests.RequestException as e:
+    except Exception as e:
         logger.error(f"测试 {address} ({full_config[:30]}...) 出错: {e}")
         return full_config, False
 
@@ -128,7 +244,7 @@ def main():
     unique_nodes = list(set(node['full_config'] for node in parsed_nodes))
     parsed_unique = [node for node in parsed_nodes if node['full_config'] in unique_nodes]
     
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         results = list(executor.map(test_node_connectivity, parsed_unique))
 
     # Summarize results
