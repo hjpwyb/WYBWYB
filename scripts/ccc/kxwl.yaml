@@ -5,19 +5,12 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 科技网络 🇺🇸, server: support.zoom.us, port: 8080, type: vmess, uuid: 44e57485-eccc-46ef-808f-cd17ac810018, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /@Malinda6104, headers: {Host: node4.rtxconfigz.com}}, udp: true}
-  - {name: 科技网络 🇺🇸 2, server: pupas-shirting-unsung.freesocks.work, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: p78naCf2EfOlRSLTX0wFVx, udp: true}
+  - {name: 科技网络 🇺🇸, server: pupas-shirting-unsung.freesocks.work, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: p78naCf2EfOlRSLTX0wFVx, udp: true}
+  - {name: 科技网络 🇺🇸 2, server: tuntro005.instconn.com, port: 443, type: trojan, password: ef269dbc-0486-451f-b94b-d0c354bc3f1c, sni: Phoenixrm2.686911.xyz, skip-cert-verify: true, udp: true}
+  - {name: 科技网络 🇸🇬, server: oksl.cfapps.ap21.hana.ondemand.com, port: 443, type: vmess, uuid: cb94c83d-50cf-4a68-ba03-c6ed757df1f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /laoluo, headers: {Host: oksl.cfapps.ap21.hana.ondemand.com}}, udp: true}
+  - {name: 科技网络 🇸🇬 2, server: 167.71.205.112, port: 80, type: ss, cipher: chacha20-ietf-poly1305, password: GjUtzQIjhyYSzhdN2ZMRft, udp: true}
   - {name: 科技网络 🇳🇱, server: switcher-nick-croquet.freesocks.work, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: RFK38Cg7APneSB5cWDcpbm, udp: true}
-  - {name: 科技网络 🇨🇳, server: liubu9.singdns.com, port: 17459, type: ss, cipher: aes-128-gcm, password: 57bc0c04-8184-48f5-906b-897d095ed445, udp: true}
-  - {name: 科技网络, server: bestcdn3.the-best-airport.top, port: 443, type: vmess, uuid: f93d5ecc-752e-4f7a-9f15-8196b9be1f9a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /aejynik, headers: {Host: vv-a3-cdn.the-best-airport.top}}, udp: true}
-  - {name: 科技网络 2, server: bestcdn1.the-best-airport.top, port: 443, type: vmess, uuid: f93d5ecc-752e-4f7a-9f15-8196b9be1f9a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /aejynik, headers: {Host: vv-c3-cdn.the-best-airport.top}}, udp: true}
-  - {name: 科技网络 3, server: bestcdn1.the-best-airport.top, port: 443, type: vmess, uuid: f93d5ecc-752e-4f7a-9f15-8196b9be1f9a, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /aejynik, headers: {Host: vv-b1-cdn.the-best-airport.top}}, udp: true}
-  - {name: 科技网络 4, server: 104.21.14.54, port: 443, type: trojan, password: e4cbe8b8-37db-4aaa-8469-b84f34c51ebc, sni: 6666YHjU.777159.xYz, skip-cert-verify: true, network: ws, ws-opts: {path: /dilyfCPEmLvYr5hYXD, headers: {Host: 6666YHjU.777159.xYz}}, udp: true}
-  - {name: 科技网络 5, server: bestcdn3.the-best-airport.top, port: 443, type: trojan, password: f93d5ecc-752e-4f7a-9f15-8196b9be1f9a, sni: tt-c3-cdn.the-best-airport.top, skip-cert-verify: true, network: ws, ws-opts: {path: /videomuaawe, headers: {Host: tt-c3-cdn.the-best-airport.top}}, udp: true}
-  - {name: 科技网络 6, server: bestcdn1.the-best-airport.top, port: 443, type: trojan, password: f93d5ecc-752e-4f7a-9f15-8196b9be1f9a, sni: tt-b1-cdn.the-best-airport.top, skip-cert-verify: true, network: ws, ws-opts: {path: /videommuaawe, headers: {Host: tt-b1-cdn.the-best-airport.top}}, udp: true}
-  - {name: 科技网络 7, server: 45.87.175.166, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: 1RWwXhwfAB5gAEozU4G2Pg, udp: true}
-  - {name: 科技网络 8, server: bestcdn2.the-best-airport.top, port: 443, type: trojan, password: f93d5ecc-752e-4f7a-9f15-8196b9be1f9a, sni: tt-a2-cdn.the-best-airport.top, skip-cert-verify: true, network: ws, ws-opts: {path: /agraeabtegrrh, headers: {Host: tt-a2-cdn.the-best-airport.top}}, udp: true}
-  - {name: 科技网络 9, server: bestcdn2.the-best-airport.top, port: 443, type: trojan, password: f93d5ecc-752e-4f7a-9f15-8196b9be1f9a, sni: tt-b2-cdn.the-best-airport.top, skip-cert-verify: true, network: ws, ws-opts: {path: /videommuaawe, headers: {Host: tt-b2-cdn.the-best-airport.top}}, udp: true}
+  - {name: 科技网络, server: bestcdn3.the-best-airport.top, port: 443, type: vmess, uuid: 27c291e8-0391-42d1-a79b-4e491e0d7502, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /aejynik, headers: {Host: vv-a3-cdn.the-best-airport.top}}, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -26,17 +19,10 @@ proxy-groups:
       - DIRECT
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -45,17 +31,10 @@ proxy-groups:
     proxies:
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -64,17 +43,10 @@ proxy-groups:
       - 🎯 全球直连
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
   - name: 📲 电报信息
     type: select
     proxies:
@@ -82,17 +54,10 @@ proxy-groups:
       - 🎯 全球直连
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -100,17 +65,10 @@ proxy-groups:
       - 🚀 节点选择
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -118,17 +76,10 @@ proxy-groups:
       - 🎯 全球直连
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
   - name: 📢 谷歌FCM
     type: select
     proxies:
@@ -137,17 +88,10 @@ proxy-groups:
       - ♻️ 自动选择
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -172,17 +116,10 @@ proxy-groups:
       - ♻️ 自动选择
       - 科技网络 🇺🇸
       - 科技网络 🇺🇸 2
+      - 科技网络 🇸🇬
+      - 科技网络 🇸🇬 2
       - 科技网络 🇳🇱
-      - 科技网络 🇨🇳
       - 科技网络
-      - 科技网络 2
-      - 科技网络 3
-      - 科技网络 4
-      - 科技网络 5
-      - 科技网络 6
-      - 科技网络 7
-      - 科技网络 8
-      - 科技网络 9
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
