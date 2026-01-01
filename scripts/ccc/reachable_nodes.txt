@@ -1,2 +1,1 @@
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@89.221.224.220:8880?encryption=none&security=none&type=grpc#%E7%BE%8E%E5%9B%BD%28yudou6677.top%20%E7%8E%89%E8%B1%86%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9%29
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@185.138.164.186:8880?encryption=none&security=none&type=grpc#%E5%BE%B7%E5%9B%BD%28yudou6677.top%20%E7%8E%89%E8%B1%86%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9%29
+vless://e4824193-4f54-453b-d037-88368e85ef0e@all.tellmethetrue.shop:443?encryption=none&security=tls&sni=pqh27v5.hiddendom.shop&type=grpc#%E7%BE%8E%E5%9B%BD%28yudou6677.top%20%E7%8E%89%E8%B1%86%E5%85%8D%E8%B4%B9%E8%8A%82%E7%82%B9%29
