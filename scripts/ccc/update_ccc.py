@@ -4,7 +4,7 @@ import os
 
 # 配置 GitHub 用户和仓库信息
 GITHUB_USER = "xinyex"
-GITHUB_REPO = "ks"
+GITHUB_REPO = "jds"
 
 # GitHub API URL
 commits_url = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/commits"
